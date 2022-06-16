@@ -24,6 +24,8 @@
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.22/slf4j-api-1.7.22.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jaudiotagger/jaudiotagger/2.0.1/jaudiotagger-2.0.1.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/rxtx/rxtx/2.1.7/rxtx-2.1.7.jar" path-in-jar="/" />
+      <element id="library" level="project" name="to.lova.peers:peers-lib:0.6.0" />
+      <element id="dir-copy" path="$MAVEN_REPOSITORY$/net/sourceforge" />
     </root>
   </artifact>
 </component>
