@@ -6,8 +6,8 @@ import java.util.Properties;
 public class Configuration {
     private static Properties properties;
     private static String configFileLocation;
-    private static final String buildName = "Coronoid_automn-pi";
-    private static final String buildNumber = "1.5";
+    private static final String buildName = "Kroner_winter-pi";
+    private static final String buildNumber = "2.0";
 
 
     public static void load(String fileLocation) throws FileNotFoundException {

@@ -31,7 +31,7 @@ public class CallLogHandler implements SynchronizationHandler {
             results.forEach(record -> {
                 JSONObject callRecord = new JSONObject();
                 try {
-                    callRecord.put("call_uuid", (long) record.get(0));
+                    callRecord.put("call_uuid", (int) record.get(0));
                     if (record.get(4) == "incoming" || record.get(4) == "missed") {
                         callRecord.put("from_phonenumber", record.get(1));
                         callRecord.put("to_phonenumber", "");

@@ -34,7 +34,7 @@ public class SMSLogHandler implements SynchronizationHandler {
             results.forEach(record -> {
                 JSONObject smsRecord = new JSONObject();
                 try {
-                    smsRecord.put("message_uuid", (long) record.get(0));
+                    smsRecord.put("message_uuid", (int) record.get(0));
                     if ((int) record.get(4) == 1) {
                         smsRecord.put("from_phonenumber", record.get(1));
                         smsRecord.put("to_phonenumber", "");
@@ -44,7 +44,7 @@ public class SMSLogHandler implements SynchronizationHandler {
                     }
                     smsRecord.put("text", record.get(2));
                     Calendar cal = Calendar.getInstance();
-                    cal.setTimeInMillis((long) record.get(3));
+                    cal.setTimeInMillis(Long.parseLong((String) record.get(3)));
                     smsRecord.put("sendtime", Utils.getDateString(cal.getTime(), "yyyy-MM-dd HH:mm:ss"));
                     sms.put(smsRecord);
                 } catch (JSONException e) {

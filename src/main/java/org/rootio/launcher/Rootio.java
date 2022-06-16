@@ -10,7 +10,7 @@ public class Rootio {
     private static DiagnosticsService diagnosticsService;
     private static SynchronizationService synchronizationService;
     private static MediaIndexingService mediaIndexingService;
-    private static SIPService sipService;
+    private static PeerSIPService sipService;
     private static RadioService radioService;
     private static PhoneService phoneService;
     private static SMSService smsService;
@@ -82,6 +82,9 @@ public class Rootio {
                 case 6:
                     service = new SIPService();
                     break;
+                case 8:
+                    service = new PeerSIPService();
+                break;
             }
             if(service != null) {
                 RootioService finalService = service;
@@ -127,7 +130,7 @@ public class Rootio {
         tr4.start();
         serviceThread.put(radioService.getServiceId(), tr4);
 
-        sipService = new SIPService();
+        sipService = new PeerSIPService();
         serviceState.put(sipService.getServiceId(), true);
         Thread tr5 = new Thread(() -> sipService.start());
         tr5.start();

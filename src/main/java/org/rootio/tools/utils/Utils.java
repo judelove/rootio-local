@@ -134,7 +134,7 @@ public class Utils {
 
 
     public static void saveJSONPreferences(JSONObject jsonData, String fileName) {
-        File fl = new File(Configuration.getProperty("config_directory" + "/" + fileName));
+        File fl = new File(Configuration.getProperty("config_directory") + "/" + fileName);
         try (FileWriter fwr = new FileWriter(fl)) {
             fwr.write(jsonData.toString());
         } catch (IOException e) {
@@ -143,7 +143,7 @@ public class Utils {
     }
 
     public static String loadPreferencesFile(String fileName) {
-        File fl = new File(Configuration.getProperty("config_directory" + "/" + fileName));
+        File fl = new File(Configuration.getProperty("config_directory") + "/" + fileName);
         StringBuilder buffer = new StringBuilder();
         try(FileReader fr = new FileReader(fl))
         {
